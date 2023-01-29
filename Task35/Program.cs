@@ -28,17 +28,17 @@ void PrintArray(int[] array)
     Console.WriteLine("]");
 }
 
-int DoubleNumbers(int[] array)
+int DoubleNumbers(int[] array, int min, int max)
 {
     int count = 0;
     for (int i = 0; i < array.Length; i++)
     {
-        if (array[i] > 9 || array[i] > 9) count++; 
+        if (array[i] >= min && array[i] <= max) count++; 
     }
     return count;
 }
 
 int[] arr = CreateArrayRndInt(123, 1, 12);
 PrintArray(arr);
-int doubleNumbers = DoubleNumbers(arr);
+int doubleNumbers = DoubleNumbers(arr, 10, 100);
 Console.WriteLine($"количество элементов массива, значения которых лежат в отрезке [10,99]. = {doubleNumbers}");
